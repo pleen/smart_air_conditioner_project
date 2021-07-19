@@ -1,0 +1,36 @@
+esphome:
+  name: air-conditioner-remote
+  platform: ESP8266
+  board: d1
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "1bd32c8898eebe4ec8c3142244803b5d"
+
+wifi:
+  ssid: "wifi-name"
+  password: "wifi-password"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Air-Conditioner-Remote"
+    password: "nIyT3tCGSlOC"
+
+captive_portal:
+time:
+  platform: homeassistant
+  id: homeassistant_time
+  
+  # Example configuration entry
+remote_transmitter:
+  pin: D6
+  carrier_duty_percent: 50%
+
+climate:
+  platform: climate_ir_lg
+  name: "AC - Multi"

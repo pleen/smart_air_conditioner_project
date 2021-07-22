@@ -1,5 +1,5 @@
 esphome:
-  name: dht11
+  name: dht
   platform: ESP8266
   board: d1_mini
 
@@ -10,24 +10,25 @@ logger:
 api:
 
 ota:
-  password: "4ebd118fda1615ffdf65086fcb1dff67"
+  password: "aa9a635382d629fde3f7039c48c88311"
 
 wifi:
-  ssid: "wifi-name"
-  password: "wifi-password"
+  ssid: "TP-Link_17C8"
+  password: "abcd1234"
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "Dht11 Fallback Hotspot"
-    password: "kQNBbnWUDOEX"
+    ssid: "Dht Fallback Hotspot"
+    password: "MSHaE0ReAAOA"
 
 captive_portal:
 
 sensor:
   - platform: dht
+    model: dht22
     pin: D2
     temperature:
       name: "Living Room Temperature"
     humidity:
       name: "Living Room Humidity"
-    update_interval: 10s
+    update_interval: 15s
